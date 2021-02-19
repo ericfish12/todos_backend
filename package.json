@@ -1,0 +1,31 @@
+{
+  "name": "todolistserver",
+  "version": "1.0.0",
+  "description": "todolistserver",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "start-dev": "webpack -w & nodemon server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Fish",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.12.17",
+    "@babel/preset-react": "^7.12.13",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.23.0",
+    "webpack-cli": "^4.5.0"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.12.17",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "pg": "^8.5.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
+    "sequelize": "^6.5.0"
+  }
+}
