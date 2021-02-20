@@ -7,7 +7,7 @@ async function seed() {
   await db.sync({ force: true });
   console.log('db synced!');
 
-  const todoss = await Promise.all([
+  const todos = await Promise.all([
     TodoLists.create({
       userId: 2,
       title: 'cody@email.com',
