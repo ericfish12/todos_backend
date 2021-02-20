@@ -1,26 +1,69 @@
+// const Sequelize = require('sequelize')
+
+// const db = new Sequelize (
+//     process.env.DATABASE_URL||`postgres://localhost:5432/antra_todoList`,  {
+//         logging: false
+//       }
+// )
+
+
+
+// const TodoLists = db.define('todolists',{
+//     userId:{
+//         type:Sequelize.INTEGER,
+        
+//         defaultValue:1
+//     },
+//     completed:{
+//         type:Sequelize.BOOLEAN,
+       
+//         defaultValue:false
+      
+//     },
+//     title:{
+//         type:Sequelize.TEXT,
+//         allowNull:false,
+//     }
+// })
+
+
+// async function seed() {
+//     await db.sync({force: true})
+//     console.log('db synced!')
+// }
+
+// //  seed()
+// module.exports = {
+//     db,
+//     TodoLists,
+//   };
+  
+
+
 const Sequelize = require('sequelize')
 
 const db = new Sequelize (
-    process.env.DATABASE_URL||`postgres://localhost:5432/antra_todoList`,  {
+    process.env.DATABASE_URL||`postgres://localhost:5432/PWMESSAGE`,  {
         logging: false
       }
 )
 
 
 
-const TodoLists = db.define('todolists',{
-    userId:{
-        type:Sequelize.INTEGER,
-        
-        defaultValue:1
+const Messages = db.define('Messages',{
+    name:{
+        type:Sequelize.STRING,
+        allowNull:false,
     },
-    completed:{
-        type:Sequelize.BOOLEAN,
-       
-        defaultValue:false
+    email:{
+        type:Sequelize.STRING,
+        allowNull:false,
+        validate:{
+            isEmail:true
+        },
       
     },
-    title:{
+    message:{
         type:Sequelize.TEXT,
         allowNull:false,
     }
@@ -35,6 +78,6 @@ async function seed() {
 //  seed()
 module.exports = {
     db,
-    TodoLists,
+    Messages,
   };
   
